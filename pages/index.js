@@ -17,14 +17,12 @@ export default function Home({sidebarList}) {
           sidebarList?.categories?.map(item => <li key={item._id}>{item.categoryName}</li> )
         }
       </main>
-
-      
     </div>
   )
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = `http://18.170.51.237:3000/website/findCategoryAndProducts?isActive=true&storeId=1-2021`;
   const response = await fetch(url);
   const data = await response.json();
