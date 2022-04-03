@@ -22,7 +22,7 @@ export default function Home({sidebarList}) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = `http://18.170.51.237:3000/website/findCategoryAndProducts?isActive=true&storeId=1-2021`;
   const response = await fetch(url);
   const data = await response.json();
